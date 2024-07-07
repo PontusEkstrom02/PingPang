@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://qwdoopkh3mud"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ns0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h443a"]
+size = Vector2(1161, 20)
+
+[node name="gameArea" type="Area2D"]
+
+[node name="topBorder" type="CollisionShape2D" parent="."]
+material = SubResource("CanvasItemMaterial_3ns0y")
+position = Vector2(576, 0)
+shape = SubResource("RectangleShape2D_h443a")
+debug_color = Color(0.0776199, 0.583754, 0.773094, 0.42)
+
+[node name="rightBorder" type="CollisionShape2D" parent="."]
+position = Vector2(1151, 570)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_h443a")
+
+[node name="leftBorder" type="CollisionShape2D" parent="."]
+position = Vector2(0, 574)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_h443a")
+
+[node name="bottomBorder" type="CollisionShape2D" parent="."]
+material = SubResource("CanvasItemMaterial_3ns0y")
+position = Vector2(572, 746)
+shape = SubResource("RectangleShape2D_h443a")
+debug_color = Color(0.0776199, 0.583754, 0.773094, 0.42)
