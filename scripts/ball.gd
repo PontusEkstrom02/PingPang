@@ -5,7 +5,7 @@ var speed : int = 100
 var dir : Vector2
 
 func _ready():
-	dir = Vector2
+	dir = Vector2(0,0)
 	
 
 func _movement_process(delta):
