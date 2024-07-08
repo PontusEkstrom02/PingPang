@@ -6,6 +6,7 @@
 size = Vector2(1161, 20)
 
 [node name="gameArea" type="Area2D"]
+metadata/_edit_group_ = true
 
 [node name="topBorder" type="CollisionShape2D" parent="."]
 material = SubResource("CanvasItemMaterial_3ns0y")
