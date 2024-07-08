@@ -8,7 +8,11 @@ size = Vector2(40, 40)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(500, 500)
 scale = Vector2(0.5, 0.5)
+collision_layer = 0
+collision_mask = 7
 motion_mode = 1
+platform_floor_layers = 4294967042
+platform_wall_layers = 1
 script = ExtResource("1_rylly")
 metadata/_edit_group_ = true
 
