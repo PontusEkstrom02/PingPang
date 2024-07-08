@@ -1,32 +1,47 @@
 [gd_scene load_steps=3 format=3 uid="uid://qwdoopkh3mud"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ns0y"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l05r4"]
+friction = 0.0
+bounce = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h443a"]
-size = Vector2(1161, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq6ej"]
+size = Vector2(1174, 15)
 
 [node name="gameArea" type="Area2D"]
 collision_mask = 0
+
+[node name="top" type="StaticBody2D" parent="."]
+position = Vector2(576, -3)
+physics_material_override = SubResource("PhysicsMaterial_l05r4")
 metadata/_edit_group_ = true
 
-[node name="topBorder" type="CollisionShape2D" parent="."]
-material = SubResource("CanvasItemMaterial_3ns0y")
-position = Vector2(576, 0)
-shape = SubResource("RectangleShape2D_h443a")
-debug_color = Color(0.0776199, 0.583754, 0.773094, 0.42)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
+shape = SubResource("RectangleShape2D_mq6ej")
 
-[node name="rightBorder" type="CollisionShape2D" parent="."]
-position = Vector2(1151, 570)
+[node name="bottom" type="StaticBody2D" parent="."]
+position = Vector2(577, 668)
+physics_material_override = SubResource("PhysicsMaterial_l05r4")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottom"]
+shape = SubResource("RectangleShape2D_mq6ej")
+
+[node name="left" type="StaticBody2D" parent="."]
+position = Vector2(-1, 296)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_h443a")
+physics_material_override = SubResource("PhysicsMaterial_l05r4")
+metadata/_edit_group_ = true
 
-[node name="leftBorder" type="CollisionShape2D" parent="."]
-position = Vector2(0, 574)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+position = Vector2(0, 2.38419e-07)
+shape = SubResource("RectangleShape2D_mq6ej")
+
+[node name="right" type="StaticBody2D" parent="."]
+position = Vector2(1155, 305)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_h443a")
+physics_material_override = SubResource("PhysicsMaterial_l05r4")
+metadata/_edit_group_ = true
 
-[node name="bottomBorder" type="CollisionShape2D" parent="."]
-material = SubResource("CanvasItemMaterial_3ns0y")
-position = Vector2(572, 746)
-shape = SubResource("RectangleShape2D_h443a")
-debug_color = Color(0.0776199, 0.583754, 0.773094, 0.42)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2(0, 2.38419e-07)
+shape = SubResource("RectangleShape2D_mq6ej")
