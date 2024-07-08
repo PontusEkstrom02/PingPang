@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qwdoopkh3mud" path="res://scenes/game_area.tscn" id="1_601kv"]
 [ext_resource type="PackedScene" uid="uid://cpcy1bywb6fmq" path="res://scenes/enemy_1.tscn" id="2_lmlkw"]
-[ext_resource type="PackedScene" uid="uid://by1544yvgpjft" path="res://player.tscn" id="3_ljyrs"]
+[ext_resource type="PackedScene" uid="uid://dapdeedkeau2n" path="res://player.tscn" id="3_ljyrs"]
 [ext_resource type="PackedScene" uid="uid://bfc2tcsvdnb06" path="res://scenes/ball.tscn" id="4_r7dyc"]
 
 [node name="game" type="Node"]
