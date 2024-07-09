@@ -1,21 +1,17 @@
-extends Area2D
-
-@export var speed = 400
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
+extends CharacterBody2D
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		
-	position += velocity * delta
-	$StaticBody2D.move_and_collide(position)
+const SPEED = 400.0
+
+
+func _physics_process(delta):
+	var direction = Input.get_axis("ui_left", "ui_right")
+	if direction:
+		if Input.is_action_pressed("Dash"):
+			velocity.x = direction * SPEED*2
+		else:
+			velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
