@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c5vedibudhyqc" path="res://scenes/ball.tscn" id="1_v6cxc"]
 [ext_resource type="PackedScene" uid="uid://cpcy1bywb6fmq" path="res://scenes/enemy_1.tscn" id="2_fbulc"]
 [ext_resource type="PackedScene" uid="uid://qwdoopkh3mud" path="res://scenes/game_area.tscn" id="3_qbrsg"]
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="4_jpr2r"]
+[ext_resource type="PackedScene" uid="uid://by1544yvgpjft" path="res://scenes/player.tscn" id="4_jpr2r"]
 
 [sub_resource type="GDScript" id="GDScript_sadoj"]
 script/source = "extends Area2D
@@ -25,3 +25,5 @@ func _ready():
 script = SubResource("GDScript_sadoj")
 
 [node name="Player" parent="." instance=ExtResource("4_jpr2r")]
+position = Vector2(545, 620)
+metadata/_edit_group_ = true

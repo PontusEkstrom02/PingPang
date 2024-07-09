@@ -1,14 +1,10 @@
 extends Area2D
 
 @export var speed = 400
-var screen_size
-var playerSize
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	playerSize = $Sprite2D.texture.get_size()
-	screen_size = get_viewport_rect().size
-	print(Vector2.ZERO)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,5 +18,4 @@ func _process(delta):
 		velocity = velocity.normalized() * speed
 		
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO + playerSize/2, screen_size - playerSize/2)
-	$Sprite2D.global_position = position
+	$StaticBody2D.move_and_collide(position)
