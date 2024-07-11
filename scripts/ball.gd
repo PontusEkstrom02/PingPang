@@ -11,7 +11,19 @@ func _physics_process(delta):
 	collision_data = move_and_collide(dir * speed * delta)
 	
 	if collision_data:
-		speed += 10
-		dir = dir.bounce(collision_data.get_normal()).normalized()
+		
+		
+		if collision_data.get_collider().name == "Player":
+			
+			speed += 10
+			var playerPosition = collision_data.get_collider().get_position()
+			dir.x += (self.position.x - playerPosition.x)/100
+			if dir.x > 4:
+				dir.x = 4
+			dir.y = -1
+			print(dir)
+		else: 
+			dir = dir.bounce(collision_data.get_normal()).normalized()
+		dir = dir.normalized()
 
 
